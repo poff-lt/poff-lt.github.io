@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>Poff.lt - aplink tave</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZh4VUIIKj11x6Y_gkEXbxlaT4caf10mA&signed_in=true"></script>
+    <script src="src/markerclusterer.js"></script>
+    <script>
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 11,
+            center: {lat: 54.6993604, lng: 25.2606266}
+        });
+    </script>
+</body>
+</html>
