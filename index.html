@@ -27,6 +27,55 @@
             zoom: 11,
             center: {lat: 54.6993604, lng: 25.2606266}
         });
+
+        var cluster = new MarkerClusterer(map, [], {gridSize: 40});
+
+        function initMap() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open('GET', 'points.json', true);
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var items = JSON.parse(xmlhttp.responseText);
+                    var addressMarkers = [];
+                    var infoWindow = new google.maps.InfoWindow();
+
+                    for (var i = 0; i < items.length; i++) {
+                        var item = items[i];
+                        var content = '';
+                        content += (item.address !== null) ? '<h2>' + item.address + '</h2>' : '';
+                        for (var j = 0; j < item.events.length; j++) {
+                            var event = item.events[j];
+                            content += '<b>' + event.title + '</b><br>';
+                            content += event.start + ' - ' + event.end + '<br>';
+                            content += (event.description !== null) ? '<span>' + event.description + '</span><br>' : '';
+                        }
+
+                        var marker = new google.maps.Marker({
+                            position: {lat: item.lat, lng: item.lng},
+                            icon: 'src/icons/' + item.type + '.png',
+                            map: map,
+                            infoContent: content
+                        });
+
+                        google.maps.event.addListener(marker, 'click', function() {
+                            infoWindow.close();
+                            infoWindow.setContent(this.infoContent);
+                            infoWindow.open(map, this);
+                        });
+
+                        if (item.address !== null) {
+                            addressMarkers.push(marker);
+                        }
+                    }
+
+                    cluster.addMarkers(addressMarkers);
+
+                }
+            };
+            xmlhttp.send(null);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initMap);
     </script>
 </body>
 </html>
