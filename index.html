@@ -6,20 +6,46 @@
     <title>Poff.lt - aplink tave</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <h1>poff.lt</h1>
-    <p>Čia rasi viską, kas vyksta aplink tave.</p>
+<div class="home-page">
+    <main>
+        <div class="home-page-content">
+            <div class="logo-holder">
+                <img src="styles/images/poff-logo.svg" alt="Poff" />
+            </div>
 
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            <p class="subtitle">Čia rasi viską, kas vyksta aplink tave.</p>
 
-        ga('create', 'UA-70610420-1', 'auto');
-        ga('send', 'pageview');
+            <form class="subscribe-form">
+                <div class="field-wrapper">
+                    <input type="email" placeholder="Gauk naujienas el. paštu" class="field-text">
+                    <button type="button" class="btn-primary">Prenumeruoti</button>
+                </div>
+            </form>
 
-    </script>
+            <p class="info-link">Susisiekite: <a href="mailto:info@poff.lt">info@poff.lt</a></p>
+        </div>
+    </main>
+</div>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-70610420-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
 </body>
 </html>
