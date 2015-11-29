@@ -29,7 +29,27 @@
             center: {lat: 54.6993604, lng: 25.2606266}
         });
 
-        var cluster = new MarkerClusterer(map, [], {gridSize: 40});
+        var clusterStyle = [
+            {
+                textColor: 'white',
+                url: 'src/icons/cluster1.png',
+                height: 20,
+                width: 20
+            },
+            {
+                textColor: 'white',
+                url: 'src/icons/cluster2.png',
+                height: 30,
+                width: 30
+            },
+            {
+                textColor: 'white',
+                url: 'src/icons/cluster3.png',
+                height: 40,
+                width: 40
+            }
+        ];
+        var cluster = new MarkerClusterer(map, [], {gridSize: 40, styles: clusterStyle});
 
         function initMap() {
             var xmlhttp = new XMLHttpRequest();
