@@ -37,25 +37,14 @@ button {
     min-height: 100%;
     padding-bottom: 115px;
     box-sizing: border-box;
-}
-
-.home-page:before {
     background: url('images/bg-buildings.jpg') no-repeat 50% 50%;
     background-size: cover;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    opacity: 0.6;
-    z-index: -1;
 }
 
 .home-page .subtitle {
     font-size: 40px;
     font-weight: 600;
-    color: #636262;
+    color: #e2e2e2;
     text-align: center;
     margin: 0;
 }
@@ -126,7 +115,7 @@ button {
     left: 0;
     right: 0;
     text-align: center;
-    color: #fff;
+    color: #e2e2e2;
     margin: 0;
 }
 
