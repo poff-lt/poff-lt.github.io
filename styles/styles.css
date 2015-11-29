@@ -61,13 +61,13 @@ button {
 }
 
 .logo-holder {
-    margin-bottom: 50px;
+    width: 200px;
+    margin: 0 auto 50px;
 }
 
 .logo-holder img {
     display: block;
     max-width: 100%;
-    margin: 0 auto;
 }
 
 .subscribe-form {
