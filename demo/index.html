@@ -6,17 +6,8 @@
     <title>Poff.lt - aplink tave</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta name="robots" content="noindex, nofollow">
-
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        #map {
-            height: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="src/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <div id="map"></div>
@@ -63,13 +54,18 @@
                     for (var i = 0; i < items.length; i++) {
                         var item = items[i];
                         var content = '';
-                        content += (item.address !== null) ? '<h2>' + item.address + '</h2>' : '';
+                        content += (item.address !== null) ? '<div class="tooltip-title">' + item.address +  '</div>'
+                                : '';
+                        content += (item.address !== null) ? '<div class="tooltip-content indent">' : '<div class="tooltip-content">';
                         for (var j = 0; j < item.events.length; j++) {
                             var event = item.events[j];
-                            content += '<b>' + event.title + '</b><br>';
-                            content += event.start + ' - ' + event.end + '<br>';
-                            content += (event.description !== null) ? '<span>' + event.description + '</span><br>' : '';
+                            content += (j !== 0) ?
+                                    '<strong class="border-top">' : '<strong>';
+                            content += event.title + '</strong>';
+                            content += '<span class="date">' + event.start + ' - ' + event.end + '</span>';
+                            content += (event.description !== null) ? '<span class="description">' + event.description + '</span>' : '';
                         }
+                        content += '</div>';
 
                         var marker = new google.maps.Marker({
                             position: {lat: item.lat, lng: item.lng},

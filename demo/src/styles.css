@@ -1,0 +1,53 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    height: 100%;
+}
+
+.tooltip-content {
+    color: #2c2c2c;
+    font-family: 'Open Sans', sans-serif;
+    width: 250px;
+}
+
+.tooltip-content.indent {
+    padding-left: 15px;
+}
+
+.tooltip-content strong {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.tooltip-content .border-top {
+    border-top: #ddd solid 1px;
+    padding-top: 8px;
+    margin-top: 10px;
+}
+
+.tooltip-content .date {
+    display: block;
+    font-weight: 400;
+    margin: 3px 0;
+    font-size: 13px;
+}
+
+.tooltip-content .description {
+    font-weight: 300;
+    font-size: 13px;
+}
+
+.tooltip-title {
+    border-bottom: #ddd solid 1px;
+    color: #202538;
+    font-weight: 700;
+    font-size: 16px;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
